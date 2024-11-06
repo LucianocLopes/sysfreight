@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
     # path("404/", pagina_nao_encontrada, name="pagina_nao_encontrada"),
     # path("500/", erro_servidor, name="erro_servidor"),
 ]
