@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block base_content %}
+{% include 'partial/_header.html' %}
+        <!-- Page Body Start-->
+        <div class="page-body-wrapper">
+            {% block content %}
+            
+            {% endblock content %}
+            {% include 'partial/_footer.html' %}
+        </div>
+{% endblock base_content %}

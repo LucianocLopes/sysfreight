@@ -1,4 +1,5 @@
 from django.views.generic.base import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PageTitleViewMixin:
@@ -16,6 +17,6 @@ class PageTitleViewMixin:
         context["title"] = self.get_title()
         return context
 
-class IndexView(PageTitleViewMixin, TemplateView):
+class IndexView(LoginRequiredMixin, PageTitleViewMixin, TemplateView):
     template_name = "core/index.html"
     title = "HEMAFRAN ADM"

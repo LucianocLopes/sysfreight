@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block base_content %}
+<!-- login page start-->
+<div class="container-fluid p-0">
+    <div class="row m-0">
+        <div class="col-12 p-0">    
+            <div class="login-card login-dark">
+                <div>
+                    
+                    <div class="login-main"> 
+                        <div>
+                            <a class="logo" href="{% url 'core:index' %}">
+                                <img class="img-fluid for-light m-auto" src="{% static 'img/logo.png' %}" alt="looginpage">
+                                <img class="img-fluid for-dark" src="{% static 'img/logo-dark.png' %}" alt="logo">
+                            </a>
+                        </div>
+                        <form class="theme-form" method="POST" action="{% url 'accounts:login' %}">
+                            {% csrf_token %}
+                            <h2 class="text-center">Realize sua identificação</h2>
+                            <p class="text-center">Informe o usuário &amp; senha para fazer login</p>
+                            <div class="form-group">
+                                <label class="col-form-label">Nome de Usuário</label>
+                                <input class="form-control" type="text" required name="username" id='id_username' placeholder="Test@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Senha</label>
+                                <div class="form-input position-relative">
+                                    <input class="form-control" type="password" name="username" required id='id_username' placeholder="*********">
+                                    <div class="show-hide">
+                                        <!--
+                                        <span class="show">
+                                            
+                                        </span>
+                                        -->
+                                    </div>
+                                    {% if error %}
+                                        <span style="color: red;">{{ error }}</span>
+                                        <br><br>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="form-group mb-0 checkbox-checked">
+                                <div class="text-end mt-3">
+                                    <button class="btn btn-primary btn-block w-100" type="submit">Entrar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock base_content %}

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     # 3td Apps
     # My Apps
     'core',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -133,8 +134,8 @@ MESSAGE_TAGS = {
     constants.WARNING: 'alert-warning',
 }
 
-# LOGIN_URL = 'accounts/login'
-# LOGOUT_URL = 'accounts/logout'
+LOGIN_URL = 'accounts/login'
+LOGOUT_URL = 'accounts/logout'
 
 # Configuração para página não encontrada (404)
 # handler404 = 'admhemafran.views.pagina_nao_encontrada'
