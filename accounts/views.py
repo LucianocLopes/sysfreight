@@ -49,6 +49,7 @@ class LoginView(PageTitleViewMixin, View):
         
         data = { 
             'form': form,
+            'title': "LOGIN",
             'error': 'Usuário ou senha inválidos'
         }     
         return render(request, 'registration/login.html', data)
