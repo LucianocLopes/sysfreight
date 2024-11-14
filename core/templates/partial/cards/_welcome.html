@@ -14,18 +14,25 @@
         </div>
         <div class="card-body">
             <div class="d-flex align-center">
-                <h1>Hello, Amirreza
-                    <img src="{% static 'assets/images/dashboard-1/hand.png' %}" alt=""/>
-                </h1>
-            </div>
-            <p> Welcome back! Let’s start from where you left.</p>
-            <div class="d-flex align-center justify-content-between">
-                <a class="btn btn-pill btn-primary" href="">Whats New!</a>
-                <span> 
-                    <svg class="stroke-icon">
-                        <use href="{% static 'assets/svg/icon-sprite.svg#watch' %}"></use>
-                    </svg> 11:14 AM
-                </span>
+                
+                {% if user.is_autheticated %}
+                    <h1>Hello, Amirreza
+                        <img src="{% static 'assets/images/dashboard-1/hand.png' %}" alt=""/>
+                    </h1>
+                    <p> Welcome back! Let’s start from where you left.</p>
+                    <div class="d-flex align-center justify-content-between">
+                        <a class="btn btn-pill btn-primary" href="">Whats New!</a>
+                        <span> 
+                            <svg class="stroke-icon">
+                                <use href="{% static 'assets/svg/icon-sprite.svg#watch' %}"></use>
+                            </svg> 11:14 AM
+                        </span>
+                    </div>
+                {% else %}
+                    <h1>Primeiro realize sua identificação
+                        <img src="{% static 'assets/images/dashboard-1/hand.png' %}" alt=""/>
+                    </h1>
+                {% endif %}
             </div>
         </div>
     </div>
