@@ -1,0 +1,366 @@
+{% load static %}
+
+<div class="nav-right">
+    <ul class="header-right"> 
+        <li class="custom-dropdown">
+            {% include 'partial/_langague.html' %}
+        </li>
+        
+        {% if user.is_authenticated %}
+        
+        <li class="search d-lg-none d-flex">
+            <a href="javascript:void(0)">
+                
+                <svg id="Search" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Iconly/Curved/Arrow - Search</title>
+                    <g fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <g>
+                            <circle id="Ellipse_739" cx="11.7666" cy="11.7666" r="8.98856" />
+                            <path id="Line_181" opacity="0.4" d="M18.0183 18.4851L21.5423 22" />
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </li>
+        <!-- dark-mode -->
+        <li> 
+            <a class="dark-mode" href="javascript:void(0)">
+                
+                    <svg id="moondark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                        <path d="M1.52251 9.31497C1.79251 13.1775 5.07001 16.32 8.99251 16.4925C11.76 16.6125 14.235 15.3225 15.72 13.29C16.335 12.4575 16.005 11.9025 14.9775 12.09C14.475 12.18 13.9575 12.2175 13.4175 12.195C9.75001 12.045 6.75001 8.97747 6.73501 5.35497C6.72751 4.37997 6.93001 3.45747 7.29751 2.61747C7.70251 1.68747 7.21501 1.24497 6.27751 1.64247C3.30751 2.89497 1.27501 5.88747 1.52251 9.31497Z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                
+            </a>
+        </li>
+        <!-- Carrinho de compras -->
+        <li class="custom-dropdown">
+            <a href="javascript:void(0)">
+                <svg id="cart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                    <path
+                        d="M2.25751 8.41504V11.7825C2.25751 15.15 3.60751 16.5 6.97501 16.5H11.0175C14.385 16.5 15.735 15.15 15.735 11.7825V8.41504"
+                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M8.99999 9C10.3725 9 11.385 7.8825 11.25 6.51L10.755 1.5H7.25249L6.74999 6.51C6.61499 7.8825 7.62749 9 8.99999 9Z"
+                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M13.7325 9C15.2475 9 16.3575 7.77 16.2075 6.2625L15.9975 4.2C15.7275 2.25 14.9775 1.5 13.0125 1.5H10.725L11.25 6.7575C11.3775 7.995 12.495 9 13.7325 9Z"
+                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M4.23 9C5.4675 9 6.585 7.995 6.705 6.7575L6.87 5.1L7.23 1.5H4.9425C2.9775 1.5 2.2275 2.25 1.9575 4.2L1.755 6.2625C1.605 7.77 2.715 9 4.23 9Z"
+                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M9 12.75C7.7475 12.75 7.125 13.3725 7.125 14.625V16.5H10.875V14.625C10.875 13.3725 10.2525 12.75 9 12.75Z"
+                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+            <span class="badge rounded-pill badge-primary">2</span>
+            <div class="custom-menu cart-dropdown py-0 overflow-hidden">
+                <h3 class="title dropdown-title">Cart</h3>
+                <ul class="pb-0">
+                    <li>
+                        <div class="d-flex">
+                            <img class="img-fluid b-r-5 me-3 img-60" src="../assets/images/dashboard-2/1.png" alt=""/>
+                            <div class="flex-grow-1">
+                                <span class="f-w-600">Watch multicolor</span>
+                                <div class="qty-box">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend">
+                                            <button class="btn quantity-left-minus" type="button" data-type="minus" data-field="">-</button>
+                                        </span>
+                                        <input class="form-control input-number" type="text" name="quantity" value="1"/>
+                                        <span class="input-group-prepend">
+                                            <button class="btn quantity-right-plus" type="button" data-type="plus" data-field="">+</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h6 class="font-primary">$500</h6>
+                            </div>
+                        <div class="close-circle">
+                            <a class="bg-danger" href="#">
+                                <i data-feather="x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="d-flex">
+                        <img class="img-fluid b-r-5 me-3 img-60" src="../assets/images/dashboard-2/2.png" alt=""/>
+                        <div class="flex-grow-1">
+                            <span class="f-w-600">Airpods</span>
+                            <div class="qty-box">
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <button class="btn quantity-left-minus" type="button" data-type="minus" data-field="">-</button>
+                                    </span>
+                                    <input class="form-control input-number" type="text" name="quantity" value="1"/>
+                                    <span class="input-group-prepend">
+                                        <button class="btn quantity-right-plus" type="button" data-type="plus" data-field="">+</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <h6 class="font-primary">$500.00</h6>
+                        </div>
+                        <div class="close-circle">
+                            <a class="bg-danger" href="#">
+                                <i data-feather="x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="total">
+                    <h6 class="mb-0">Order Total :
+                        <span class="f-w-600">$1000.00</span>
+                    </h6>
+                </li>
+                <li class="text-center">
+                    <a class="d-block mb-3 view-cart f-w-700 text-primary" href="cart.html">Go to your cart</a>
+                    <a class="btn btn-primary view-checkout text-white" href="checkout.html">Checkout</a>
+                </li>
+            </ul>
+        </div>
+        </li>
+        <!-- Notificações -->
+        <li class="custom-dropdown">
+            <a href="javascript:void(0)">
+                <svg id="notification" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                    <path d="M9 4.83008V7.32758" stroke-width="1.2" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M9.01502 1.5C6.25502 1.5 4.02001 3.735 4.02001 6.495V8.07C4.02001 8.58 3.81001 9.345 3.54751 9.78L2.59501 11.37C2.01001 12.3525 2.41501 13.4475 3.49501 13.8075C7.08001 15 10.9575 15 14.5425 13.8075C15.555 13.47 15.99 12.285 15.4425 11.37L14.49 9.78C14.2275 9.345 14.0175 8.5725 14.0175 8.07V6.495C14.01 3.75 11.76 1.5 9.01502 1.5Z"
+                        stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" />
+                    <path
+                        d="M11.4975 14.115C11.4975 15.4875 10.3725 16.6125 9 16.6125C8.3175 16.6125 7.6875 16.3275 7.2375 15.8775C6.7875 15.4275 6.5025 14.7975 6.5025 14.115"
+                        stroke-width="1.2" stroke-miterlimit="10" />
+                </svg>
+            </a>
+            <span class="badge rounded-pill badge-primary">4</span>
+            <div class="custom-menu notification-dropdown py-0 overflow-hidden">
+                <h3 class="title bg-primary-light dropdown-title">Notification
+                    <span class="font-primary">View all</span>
+                </h3>
+                <ul class="activity-timeline">
+                    <li class="d-flex align-items-start">
+                        <div class="activity-line"></div>
+                        <div class="activity-dot-primary"></div>
+                        <div class="flex-grow-1">
+                            <h6 class="f-w-600 font-primary">30-04-2024<span>Today</span>
+                                <span class="circle-dot-primary float-end">
+                                    <svg class="circle-color">
+                                        <use href="../assets/svg/iconly-sprite.svg#circle"></use>
+                                    </svg>
+                                </span>
+                            </h6>
+                            <h5>Alice Goodwin</h5>
+                            <p class="mb-0">Fashion should be fun. It shouldn't be labelled intellectual.</p>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <div class="activity-dot-secondary"></div>
+                        <div class="flex-grow-1">
+                            <h6 class="f-w-600 font-secondary">28-06-2024
+                                <span>1 hour ago</span>
+                                <span class="float-end circle-dot-secondary">
+                                    <svg class="circle-color">
+                                        <use href="../assets/svg/iconly-sprite.svg#circle"></use>
+                                    </svg>
+                                </span>
+                            </h6>
+                            <h5>Herry Venter</h5>
+                            <p>I am convinced that there can be luxury in simplicity.</p>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <div class="activity-dot-primary"></div>
+                        <div class="flex-grow-1">
+                            <h6 class="f-w-600 font-primary">04-08-2024
+                                <span>Today</span>
+                                <span class="float-end circle-dot-primary">
+                                    <svg class="circle-color">
+                                        <use href="../assets/svg/iconly-sprite.svg#circle"></use>
+                                    </svg>
+                                </span>
+                            </h6>
+                            <h5>Loain Deo</h5>
+                            <p>I feel that things happen for open new opportunities.</p>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <div class="activity-dot-secondary"></div>
+                        <div class="flex-grow-1">
+                            <h6 class="f-w-600 font-secondary">12-11-2024
+                                <span>Yesterday</span>
+                                <span class="float-end circle-dot-secondary">
+                                    <svg class="circle-color">
+                                        <use href="../assets/svg/iconly-sprite.svg#circle"></use>
+                                    </svg>
+                                </span>
+                            </h6>
+                            <h5>Fenter Jessy</h5>
+                            <p>Sometimes the simplest things are the most profound.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <!-- full-screen -->
+        <li>
+            <a class="full-screen" href="javascript:void(0)"> 
+                <svg id="scanfull" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                    <path d="M1.5 6.75V5.25C1.5 3 3 1.5 5.25 1.5H12.75C15 1.5 16.5 3 16.5 5.25V6.75"
+                        stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M1.5 11.25V12.75C1.5 15 3 16.5 5.25 16.5H12.75C15 16.5 16.5 15 16.5 12.75V11.25"
+                        stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M1.5 9H16.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </li>
+        <!-- lembrentes -->
+        <li class="custom-dropdown">
+            <a href="javascript:void(0)">
+                <svg id="bookmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                    <path d="M6.9375 6.7876C8.2725 7.2751 9.7275 7.2751 11.0625 6.7876" stroke-width="1.2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M12.615 1.5H5.38499C3.78749 1.5 2.48999 2.805 2.48999 4.395V14.9625C2.48999 16.3125 3.45749 16.8825 4.64249 16.23L8.30249 14.1975C8.69249 13.98 9.32249 13.98 9.70499 14.1975L13.365 16.23C14.55 16.89 15.5175 16.32 15.5175 14.9625V4.395C15.51 2.805 14.2125 1.5 12.615 1.5Z"
+                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M12.615 1.5H5.38499C3.78749 1.5 2.48999 2.805 2.48999 4.395V14.9625C2.48999 16.3125 3.45749 16.8825 4.64249 16.23L8.30249 14.1975C8.69249 13.98 9.32249 13.98 9.70499 14.1975L13.365 16.23C14.55 16.89 15.5175 16.32 15.5175 14.9625V4.395C15.51 2.805 14.2125 1.5 12.615 1.5Z"
+                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+            <div class="custom-menu bookmark-dropdown py-0 overflow-hidden">
+                <h3 class="title bg-primary-light dropdown-title">Bookmark</h3>
+                <ul> 
+                    <li> 
+                        <form class="mb-0">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Search Bookmark..."/>
+                                <span class="input-group-text">
+                                    <svg class="svg-color">
+                                        <use href="../assets/svg/iconly-sprite.svg#Search"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-2 btn-activity-primary">
+                            <a href="index.html">
+                                <svg class="svg-color">
+                                    <use href="../assets/svg/iconly-sprite.svg#cube"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <a href="index.html">Dashboard</a>
+                            <svg class="svg-color icon-star">
+                                <use href="../assets/svg/iconly-sprite.svg#star"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-2 btn-activity-secondary">
+                            <a href="to-do.html">
+                                <svg class="svg-color">
+                                    <use href="../assets/svg/iconly-sprite.svg#check"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <a href="to-do.html">To-do</a>
+                            <svg class="svg-color icon-star">
+                                <use href="../assets/svg/iconly-sprite.svg#star"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-2 btn-activity-danger">
+                            <a href="apex_chart.html">
+                                <svg class="svg-color">
+                                    <use href="../assets/svg/iconly-sprite.svg#pie"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <a href="apex_chart.html">Chart</a>
+                            <svg class="svg-color icon-star">
+                                <use href="../assets/svg/iconly-sprite.svg#star"></use>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <!-- Previsão do Tempo -->
+        <li class="cloud-design">
+            <a class="cloud-mode">
+                <svg id="cloud-header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M17.1356 20C20.0424 20 22 17.6122 22 14.6667C22 12.4665 20.6853 10.5776 18.8086 9.76241C18.4665 6.52713 15.5488 4 12 4C8.22121 4 5.15789 6.86538 5.15789 10.4C5.15789 10.4908 5.15992 10.5811 5.16392 10.671C3.32099 11.3282 2 13.1078 2 15.2C2 17.851 3.82836 20 6.44444 20"
+                        stroke-width="1.5" stroke-linecap="round" />
+                    <path
+                        d="M10.7 16L9.70001 17.7321M14.1641 18L13.1641 19.7321M10.9321 19.5981L9.93207 21.3301"
+                        stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <h3>15</h3>
+            </a>
+        </li>
+        <!-- user -->
+        <li class="profile-nav custom-dropdown">
+            <div class="user-wrap">
+                <div class="user-img">
+                    <img src="{% static 'assets/images/profile.png' %}" alt="user"/>
+                </div>
+                <div class="user-content">
+                    <h6>Ava Davis</h6>
+                    <p class="mb-0">Admin<i class="fa-solid fa-chevron-down"></i></p>
+                </div>
+            </div>
+            <div class="custom-menu overflow-hidden">
+                <ul class="profile-body">
+                    <li class="d-flex"> 
+                        <svg class="svg-color">
+                            <use href="../assets/svg/iconly-sprite.svg#Profile"></use>
+                        </svg>
+                        <a class="ms-2" href="user-profile.html">Account</a>
+                    </li>
+                    <li class="d-flex"> 
+                        <svg class="svg-color">
+                            <use href="../assets/svg/iconly-sprite.svg#Message"></use>
+                        </svg>
+                        <a class="ms-2" href="letter-box.html">Inbox</a>
+                    </li>
+                    <li class="d-flex"> 
+                        <svg class="svg-color">
+                            <use href="../assets/svg/iconly-sprite.svg#Document"></use>
+                        </svg>
+                        <a class="ms-2" href="to-do.html">Task</a>
+                    </li>
+                    <li class="d-flex"> 
+                        <svg class="svg-color">
+                            <use href="../assets/svg/iconly-sprite.svg#Login"></use>
+                        </svg>
+                        <a class="ms-2" href="login.html">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        
+        {% else %}
+        
+        <li class="profile-nav custom-dropdown">
+            <div class="user-wrap">
+                <div class="user-img">
+                    <img src="{% static 'assets/images/profile.png' %}" alt="user"/>
+                </div>
+                <div class="user-content">
+                    <h6>Login</h6>
+                    <p class="mb-0">Realize sua identificação</p>
+                </div>
+            </div>
+        </li>
+        {% endif %}
+        
+    </ul>
+</div>

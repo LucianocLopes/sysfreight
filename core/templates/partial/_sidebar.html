@@ -1,0 +1,37 @@
+{% load static %}
+
+<aside class="page-sidebar"> 
+    <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+    <div class="main-sidebar" id="main-sidebar">
+        <ul class="sidebar-menu" id="simple-bar">
+            
+            {% if user.is_authenticated %}
+                {% include 'partial/sidebar/_pinned.html' %}
+                {% include 'partial/sidebar/_general.html' %}
+                {% include 'partial/sidebar/_administration.html' %}
+                {% include 'partial/sidebar/_operation.html' %}
+                {% include 'partial/sidebar/_humanResources.html' %}
+                {% include 'partial/sidebar/_commercial.html' %}
+                {% include 'partial/sidebar/_users.html' %}
+                {% include 'partial/sidebar/_financials.html' %}
+            {% else %}
+                <li class="sidebar-main-title">
+                    <div>
+                        <h5 class="sidebar-title pt-3 f-w-700">Identificação</h5>
+                    </div>
+                </li>
+                <li class="sidebar-list">
+                    <i class="fa-solid fa-thumbtack"></i>
+                    <a class="sidebar-link" href="javascript:void(0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="stroke-icon bi bi-door-open" viewBox="0 0 16 16">
+                            <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
+                            <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z"/>
+                        </svg>
+                        <h6 class="f-w-600">Realize o Login</h6>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+</aside>

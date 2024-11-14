@@ -1,0 +1,25 @@
+{% load static %}
+
+{% if user.is_authenticated %}
+    <div class="page-title">
+        <div class="row">
+            <div class="col-sm-6 col-12"> 
+                <h2>HEMAFRAN LOGISTICA & TRANSPORTES</h2>
+                <p class="mb-0 text-title-gray">Sua carga em boas mãos.</p>
+            </div>
+            <div class="col-sm-6 col-12">
+                {% include 'partial/_breadcrumb.html' %}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="page-title">
+        <div class="row">
+            <div class="col-sm-6 col-12"> 
+                <h2>HEMAFRAN LOGISTICA & TRANSPORTES</h2>
+                <p class="mb-0 text-title-gray">Sua carga em boas mãos.</p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+

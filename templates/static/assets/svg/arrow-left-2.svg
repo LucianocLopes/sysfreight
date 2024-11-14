@@ -1,0 +1,14 @@
+<svg fill="none">
+    <symbol id="Arrow---Left-2" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>Iconly/Curved/Arrow - Left 2</title>
+        <g fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <g>
+                <path d="M8.18752 12.0218H20.2285" />
+                <path d="M11.1152 9.10577L8.18723 12.0218L11.1152 14.9378" />
+                <path opacity="0.4"
+                    d="M15.4956 7.38897V6.45597C15.4956 4.42097 13.8466 2.77197 11.8106 2.77197H6.92661C4.89661 2.77197 3.25161 4.41697 3.25161 6.44697V17.587C3.25161 19.622 4.90161 21.272 6.93661 21.272H11.8216C13.8506 21.272 15.4956 19.626 15.4956 17.597V16.655" />
+            </g>
+        </g>
+    </symbol>
+</svg>
