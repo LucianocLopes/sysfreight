@@ -13,27 +13,28 @@
             </div>
         </div>
         <div class="card-body">
-            <div class="d-flex align-center">
-                
-                {% if user.is_autheticated %}
-                    <h1>Hello, Amirreza
+            <div class="d-flex align-center">                
+                {% if user.is_authenticated %}
+                    <h1>Hello, {{user.username}}
                         <img src="{% static 'assets/images/dashboard-1/hand.png' %}" alt=""/>
                     </h1>
-                    <p> Welcome back! Let’s start from where you left.</p>
+            </div>
+                    <p> Bem vindo de Volta! Vamos continuar de onde você parou!</p>
                     <div class="d-flex align-center justify-content-between">
-                        <a class="btn btn-pill btn-primary" href="">Whats New!</a>
+                        <a class="btn btn-pill btn-primary" href="">O que tem de Novo!</a>
                         <span> 
                             <svg class="stroke-icon">
                                 <use href="{% static 'assets/svg/icon-sprite.svg#watch' %}"></use>
                             </svg> 11:14 AM
                         </span>
                     </div>
+                    
                 {% else %}
                     <h1>Primeiro realize sua identificação
                         <img src="{% static 'assets/images/dashboard-1/hand.png' %}" alt=""/>
                     </h1>
-                {% endif %}
             </div>
+                {% endif %}
         </div>
     </div>
 </div>

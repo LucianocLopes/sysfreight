@@ -136,6 +136,8 @@ MESSAGE_TAGS = {
 
 LOGIN_URL = 'accounts/login'
 LOGOUT_URL = 'accounts/logout'
+LOGOUT_REDIRECT_URL = LOGIN_URL
+LOGIN_REDIRECT_URL = '/'
 
 # Configuração para página não encontrada (404)
 # handler404 = 'admhemafran.views.pagina_nao_encontrada'

@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic.base import TemplateView
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout, get_user_model
@@ -26,44 +29,15 @@ class PageTitleViewMixin:
         return context
 
 
-class LoginView(PageTitleViewMixin, View):
-    title = "Login"
+class LoginView(PageTitleViewMixin, LoginView):
+    template_name = "registration/login.html"
+    title = 'Login'
     
-    def get(self, request):
-        data = { 'form': forms.LoginForm(),
-                'title': "LOGIN",
-            }
-        return render(request, 'registration/login.html', data)
 
+class LogoutView(PageTitleViewMixin, TemplateView):
+    template_name = 'registration/logout.html'
+    title = 'Logout'
+    
     def post(self, request):
-        form = forms.LoginForm(data=request.POST)
-        
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-
-            if username and password \
-                and authenticate(username=username, password=password):
-                login(request, user)
-                return HttpResponseRedirect(reverse(self.get_success_url))
-        
-        data = { 
-            'form': form,
-            'title': "LOGIN",
-            'error': 'Usuário ou senha inválidos'
-        }     
-        return render(request, 'registration/login.html', data)
-
-    def get_success_url(self):
-        redirect_to = self.request.POST.get('next', self.request.GET.get('next', '/'))
-        return redirect_to
-
-
-class LogoutView(LoginRequiredMixin, View):
-    def get(self, request):
         logout(request)
-        return HttpResponseRedirect(reverse(self.get_success_url))
-    
-    def get_success_url(self):
-        redirect_to = self.request.POST.get('next', self.request.GET.get('next', '/'))
-        return redirect_to
+        return redirect('/')

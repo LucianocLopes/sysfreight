@@ -16,8 +16,15 @@
                                 <img class="img-fluid for-dark" src="{% static 'img/logo-dark.png' %}" alt="logo">
                             </a>
                         </div>
+                        {% if next %}
+                            {% if user.is_authenticated %}
+                                <p>Sua conta não tem acesso a esta página. Para prosseguir,
+                                    faça login com uma conta que tenha acesso.</p>
+                            {% endif %}
+                        {% endif %}
+                        
                         <form class="theme-form" method="POST" action="{% url 'accounts:login' %}">
-                            {% csrf_token %}
+                        {% csrf_token %}
                             <h2 class="text-center">Realize sua identificação</h2>
                             <p class="text-center">Informe o usuário &amp; senha para fazer login</p>
                             <div class="form-group">
@@ -27,7 +34,7 @@
                             <div class="form-group">
                                 <label class="col-form-label">Senha</label>
                                 <div class="form-input position-relative">
-                                    <input class="form-control" type="password" name="username" required id='id_username' placeholder="*********">
+                                    <input class="form-control" type="password" name="password" required id='id_password' placeholder="*********">
                                     <div class="show-hide">
                                         <!--
                                         <span class="show">
@@ -35,13 +42,15 @@
                                         </span>
                                         -->
                                     </div>
-                                    {% if error %}
-                                        <span style="color: red;">{{ error }}</span>
-                                        <br><br>
+                                    {% if form.errors %}
+                                        <span style="color: red;">
+                                            {{ form.non_field_errors }}
+                                            </span>
                                     {% endif %}
+                                    
                                 </div>
                             </div>
-                            <div class="form-group mb-0 checkbox-checked">
+                            <div class="form-group mb-0">
                                 <div class="text-end mt-3">
                                     <button class="btn btn-primary btn-block w-100" type="submit">Entrar</button>
                                 </div>

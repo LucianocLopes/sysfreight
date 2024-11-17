@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block base_content %}
+<body class="log"><div class="container-fluid p-0">
+    <div class="row m-0">
+        <div class="col-12 p-0">    
+            <div class="login-card login-dark">
+                <div>
+                    
+                    <div class="login-main"> 
+                        <div>
+                            <a class="logo" href="{% url 'core:index' %}">
+                                <img class="img-fluid for-light m-auto" src="{% static 'img/logo.png' %}" alt="looginpage">
+                                <img class="img-fluid for-dark" src="{% static 'img/logo-dark.png' %}" alt="logo">
+                            </a>
+                        </div>
+                        <form class="logout-form" method="post">
+                            {% csrf_token %}
+                            <h2 class="text-center">Sair</h2>
+                            <p class="text-center">Você tem certeza que deseja sair?</p>
+                            <div class="button-container">
+                                <button class="btn btn-primary btn-block w-100" type="submit">Sair</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock base_content %}
