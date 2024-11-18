@@ -134,6 +134,9 @@ MESSAGE_TAGS = {
     constants.WARNING: 'alert-warning',
 }
 
+
+AUTH_USER_MODEL = 'accounts.UserMain'
+
 LOGIN_URL = 'accounts/login'
 LOGOUT_URL = 'accounts/logout'
 LOGOUT_REDIRECT_URL = LOGIN_URL

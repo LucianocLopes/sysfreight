@@ -15,7 +15,7 @@
         <div class="card-body">
             <div class="d-flex align-center">                
                 {% if user.is_authenticated %}
-                    <h1>Hello, {{user.username}}
+                    <h1>Hello, {{user.get_full_name}}
                         <img src="{% static 'assets/images/dashboard-1/hand.png' %}" alt=""/>
                     </h1>
             </div>
